@@ -1,7 +1,7 @@
 # Cointracker
 
 Cointracker is a simple email alert service for Bitcoin (BTC) and Ethereum (ETH).
-It periodically polls market data from the CoinGecko API and notifies you when
+It polls market data from the CoinGecko API and the Fear & Greed Index and notifies you when
 several bearish indicators align.
 
 ## Description
@@ -41,10 +41,16 @@ market is in a state of fear, an email alert is sent.
    export CHECK_INTERVAL="3600"
    ```
 
-2. Run the alert service:
+2. Run the background alert service:
 
    ```bash
    python app/alert_service.py
+   ```
+
+3. Alternatively launch the web interface:
+
+   ```bash
+   python app/web_app.py
    ```
 
 ## Features
@@ -59,4 +65,3 @@ market is in a state of fear, an email alert is sent.
 - Support additional cryptocurrencies
 - Provide command‑line arguments for thresholds and coins
 - Optionally log alerts to a file or database
-
